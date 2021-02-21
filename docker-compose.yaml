@@ -5,6 +5,11 @@ services:
     build: ./service-1-frontend
     ports:
     - "5000:5000"
+    environment:
+      - DATABASE_URI=mysql+pymysql://root:${rootpass}@db/db
+      - SECRET_KEY=${SECRET_KEY}
+    depends_on:
+      - db
   service2:
     image: neinomas/prize-gen-services2
     build: ./service-2-char-gen
@@ -24,3 +29,15 @@ services:
     - type: bind
       source: ./nginx/nginx.conf
       target: /etc/nginx/nginx.conf
+  db:
+    image: neinomas/db
+    build: ./db
+    ports:
+      - target: 3306
+        publish: 3306
+    volumes: 
+      type: volume
+      source: db
+      target: /var/lib/mysql
+volumes: 
+  db:
