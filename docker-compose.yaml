@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  service1:
+    container_name: service1
+    image: neinomas/prize-gen-service1
+    build: ./service-1-frontend
+    deploy:
+      replicas: 2
+    ports:
+    - target: 5000
+      publish : 5000
+      protocal : tcp
+  services2 :
+    container_name: services2
+    image: neinomas/prize-gen-services2
+    build: ./service-2-char-gen
+    deploy:
+      replicas: 2
+  services3 :
+    container_name: services3
+    image: neinomas/prize-gen-service3
+    build: ./service-3-num-gen
+    deploy:
+      replicas: 2
+  services4 :
+    container_name: services4
+    image: neinomas/prize-gen-service4
+    build: ./service-4-prize-gen
+    deploy:
+      replicas: 2

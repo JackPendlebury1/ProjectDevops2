@@ -6,5 +6,8 @@ from app.forms import IndexForm
 def home():
     form = IndexForm()
     if request.method == 'POST':
-        return render_template('index.html', form=form , message = "ABC432132144, Your prize is a Boat!")
-    return render_template('index.html', form=form)
+        char = request.get("http://service2:5000/get_chargen")
+        num = request.get("http://service3:5000/get_numgen")
+        prize = request.post("http://service4:5000/get_prize", json={"account_number" : char.text + num.text})
+        return render_template('index.html', form=form, message = prize.text)
+    return render_template('index.html', form=form, message = "")
