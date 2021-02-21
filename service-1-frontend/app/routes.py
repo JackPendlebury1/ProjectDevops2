@@ -11,8 +11,8 @@ def home():
         char = requests.get("http://service2:5000/get_chargen")
         num = requests.get("http://service3:5000/get_numgen")
         prize = requests.post("http://service4:5000/prize", json={"account_number" : char.text + num.text})
-
-        account_prize = Prizes(account_number = char + num, prize = prize.text)
+        account_number = char.text + num.text
+        account_prize = Prizes(account_number = account_number, prize = prize.text)
         db.add(account_prize)
         db.commit()
         prizes = Prizes.query.limit(10).all()
