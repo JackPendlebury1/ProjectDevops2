@@ -35,9 +35,9 @@ services:
     ports:
       - target: 3306
         publish: 3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=${rootpass}
     volumes: 
-      type: volume
-      source: db
-      target: /var/lib/mysql
+      - my-datavolume:/var/lib/mysql
 volumes: 
-  db:
+  my-datavolume:
