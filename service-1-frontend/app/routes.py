@@ -13,8 +13,8 @@ def home():
         prize = requests.post("http://service4:5000/prize", json={"account_number" : char.text + num.text})
         account_number = char.text + num.text
         account_prize = Prizes(account_number = account_number, prize = prize.text)
-        db.add(account_prize)
-        db.commit()
+        db.session.add(account_prize)
+        db.session.commit()
         prizes = Prizes.query.limit(10).all()
         return render_template('index.html', form=form, message = prize.text, prizes = prizes)
     return render_template('index.html', form=form, message = "")
