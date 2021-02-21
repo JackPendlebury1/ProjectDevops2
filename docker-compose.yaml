@@ -7,8 +7,7 @@ services:
     deploy:
       replicas: 2
     ports:
-    - target: 5000
-      publish : 5000
+    - "5000:5000"
   services2 :
     container_name: services2
     image: neinomas/prize-gen-services2
