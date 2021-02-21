@@ -5,13 +5,13 @@ services:
     build: ./service-1-frontend
     ports:
     - "5000:5000"
-  services2:
+  service2:
     image: neinomas/prize-gen-services2
     build: ./service-2-char-gen
-  services3:
+  service3:
     image: neinomas/prize-gen-service3
     build: ./service-3-num-gen
-  services4:
+  service4:
     image: neinomas/prize-gen-service4
     build: ./service-4-prize-gen
   nginx:
