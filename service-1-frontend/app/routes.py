@@ -1,6 +1,7 @@
-from flask import render_template, redirect, url_for, requests, request
+from flask import render_template, redirect, url_for, , request
 from app import app
 from app.forms import IndexForm
+import requests
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
