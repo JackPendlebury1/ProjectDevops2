@@ -34,7 +34,7 @@ services:
     build: ./db
     ports:
       - target: 3306
-        publish: 3306
+        published: 3306
     environment:
       - MYSQL_ROOT_PASSWORD=${rootpass}
     volumes: 
