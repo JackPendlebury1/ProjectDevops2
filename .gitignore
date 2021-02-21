@@ -1,3 +1,8 @@
 service-1-frontend/app/__pycache__
-service-1-frontend/app/__pycache__
+service-2-char-gen/app/__pycache__
+service-3-num-gen/app/__pycache__
+service-4-prize-gen/app/__pycache__
 service-1-frontend/venv
+service-2-char-gen/venv
+service-3-num-gen/venv
+service-4-prize-gem/venv
