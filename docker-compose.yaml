@@ -9,7 +9,6 @@ services:
     ports:
     - target: 5000
       publish : 5000
-      protocal : tcp
   services2 :
     container_name: services2
     image: neinomas/prize-gen-services2
