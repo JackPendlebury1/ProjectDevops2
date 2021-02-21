@@ -14,24 +14,15 @@ services:
     build: ./service-2-char-gen
     deploy:
       replicas: 2
-    ports:
-    - published: 5001
-      target: 5001
   services3 :
     container_name: services3
     image: neinomas/prize-gen-service3
     build: ./service-3-num-gen
     deploy:
       replicas: 2
-    ports:
-    - published: 5002
-      target: 5002
   services4 :
     container_name: services4
     image: neinomas/prize-gen-service4
     build: ./service-4-prize-gen
     deploy:
       replicas: 2
-    ports:
-    - published: 5003
-      target: 5003
