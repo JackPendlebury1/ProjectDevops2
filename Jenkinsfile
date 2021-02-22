@@ -31,6 +31,7 @@ pipeline{
                                 sh "docker-compose push"
                             }
                             sh "docker system prune -af"
+                        }
                     }
                 }
             }
