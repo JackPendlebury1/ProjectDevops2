@@ -5,7 +5,7 @@ pipeline{
             rollback = 'false'
         }
         stages{
-            stage('Build Image'){
+            stage('testing'){
                 steps{
                     sh '''
                     #!/bin/bash
