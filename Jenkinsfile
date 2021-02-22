@@ -18,7 +18,7 @@ pipeline{
                     script{
                         if (env.rollback == 'false'){
                             sh '''
-                            cd service-1-frontend
+                            cd /var/lib/jenkins/workspace/Project1-pipeline/service-1-frontend
                             '''
                             image = docker.build("neinomas/prize-gen-service1")
                             sh '''
