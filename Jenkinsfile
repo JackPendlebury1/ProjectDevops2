@@ -13,13 +13,24 @@ pipeline{
                     '''
                 }
             }
-            stage('Build Image, Tag & Push'){
+            stage('Build Image & Tag'){
                 steps{
                     script{
                         if (env.rollback == 'false'){
-                            sh "docker-compose build --parallel --build-arg APP_VERSION=${app_version} && docker-compose push"
-                            sh "docker system prune -af"
+                            sh "docker-compose build --parallel --build-arg APP_VERSION=${app_version}"
+                            
                         }
+                    }
+                }
+            }
+            stage('Push'){
+                steps{
+                    script{
+                        if (env.rollback == 'false'){
+                            docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials'){
+                                sh "docker-compose push"
+                            }
+                            sh "docker system prune -af"
                     }
                 }
             }
