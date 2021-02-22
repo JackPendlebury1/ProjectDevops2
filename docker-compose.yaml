@@ -4,7 +4,7 @@ services:
     image: neinomas/prize-gen-service1
     build: ./service-1-frontend
     ports:
-    - "5000:5000"
+    - target: 5000
     environment:
       - DATABASE_URI=mysql+pymysql://root:${rootpass}@db/db
       - SECRET_KEY=${SECRET_KEY}
@@ -34,7 +34,6 @@ services:
     build: ./db
     ports:
       - target: 3306
-        published: 3306
     environment:
       - MYSQL_ROOT_PASSWORD=${rootpass}
     volumes: 
