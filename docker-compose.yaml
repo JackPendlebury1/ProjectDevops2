@@ -11,7 +11,7 @@ services:
     depends_on:
       - db
   service2:
-    image: neinomas/prize-gen-services2:${app_version}
+    image: neinomas/prize-gen-service2:${app_version}
     build: ./service-2-char-gen
   service3:
     image: neinomas/prize-gen-service3:${app_version}
