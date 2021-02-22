@@ -7,6 +7,14 @@ pipeline{
         stages{
             stage('Build Image'){
                 steps{
+                    sh '''
+                    #!/bin/bash
+                    echo testing
+                    '''
+                }
+            }
+            stage('Build Image'){
+                steps{
                     script{
                         if (env.rollback == 'false'){
                             image = docker.build("neinomas/prize-gen-service1")
