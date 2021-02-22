@@ -17,7 +17,7 @@ pipeline{
                 steps{
                     script{
                         if (env.rollback == 'false'){
-                            sh "docker-compose build --build-arg APP_VERSION=${app_version} && docker-compose push"
+                            sh "docker-compose build --parallel --build-arg APP_VERSION=${app_version} && docker-compose push"
                             sh "docker system prune -af"
                         }
                     }
