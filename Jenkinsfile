@@ -28,7 +28,7 @@ pipeline{
                     script{
                         if (env.rollback == 'false'){
                             docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials'){
-                                sh "docker-compose build --parallel --build-arg APP_VERSION=${app_version} && docker-compose push"
+                                sh "docker-compose push --ignore-push-failures"
                             }
                             sh "docker system prune -af"
                         }
