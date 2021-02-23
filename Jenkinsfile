@@ -17,20 +17,8 @@ pipeline{
                 steps{
                     script{
                         if (env.rollback == 'false'){
-                            sh "docker-compose build --parallel --build-arg APP_VERSION=${app_version}"
+                            sh "docker-compose build --parallel --build-arg APP_VERSION=${app_version} && docker-compose push"
                             
-                        }
-                    }
-                }
-            }
-            stage('Push'){
-                steps{
-                    script{
-                        if (env.rollback == 'false'){
-                            docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials'){
-                                sh "docker-compose push"
-                            }
-                            sh "docker system prune -af"
                         }
                     }
                 }
