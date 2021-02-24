@@ -34,7 +34,6 @@ pipeline{
                             
                         }
                     }
-                }
             }
             stage("configuration management ansible"){
                 steps{
