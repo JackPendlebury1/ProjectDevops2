@@ -19,7 +19,8 @@ pipeline{
                 steps{
                     script{
                         if (env.rollback == 'false'){
-                            sh "echo f"
+                            sh "docker-compose build --parallel --build-arg APP_VERSION=${app_version}"
+                            
                         }
                     }
                 }
@@ -28,7 +29,9 @@ pipeline{
                 steps{
                     script{
                         if (env.rollback == 'false'){
-                            sh "docker-compose build --parallel --build-arg APP_VERSION=${app_version} && docker-compose push --ignore-push-failures"
+                            docker.withRegistry('', 'docker-hub-credentials'){
+                                sh "docker-compose push --ignore-push-failures"
+                            }
                             sh "docker system prune -af"
                         }
                     }
