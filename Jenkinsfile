@@ -3,6 +3,8 @@ pipeline{
         environment {
             app_version = 'v1'
             rollback = 'false'
+            rootpass = credentials("rootpass")
+            SECRET_KEY = credentials("SECRET_KEY")
         }
         stages{
             stage('testing'){
@@ -35,8 +37,17 @@ pipeline{
                     }
                 }
             }
+            stage("configuration management ansible"){
+                steps{
+                    script{
+                        sh "echo config"
+                    }
+                }
+            }
             stage('Deploy App'){
                 steps{
+                    sh "export rootpass=$rootpass"
+                    sh "export SECRET_KEY=$SECRET_KEY"
                     sh "docker-compose pull && docker-compose up -d"
                 }
             }
