@@ -28,12 +28,11 @@ pipeline{
                 steps{
                     script{
                         if (env.rollback == 'false'){
-                                sh "docker-compose build --parallel --build-arg APP_VERSION=${app_version} && docker-compose push --ignore-push-failures"
-                                sh "docker system prune -af"
-                            }
-                            
+                            sh "docker-compose build --parallel --build-arg APP_VERSION=${app_version} && docker-compose push --ignore-push-failures"
+                            sh "docker system prune -af"
                         }
                     }
+                }
             }
             stage("configuration management ansible"){
                 steps{
