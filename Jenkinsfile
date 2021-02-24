@@ -29,7 +29,7 @@ pipeline{
                 steps{
                     script{
                         if (env.rollback == 'false'){
-                            docker.withRegistry('https://registry-1.docker.io/v2/', 'docker-hub-credentials'){
+                            docker.withRegistry('https://hub.docker.com', 'docker-hub-credentials'){
                                 sh "docker-compose push --ignore-push-failures"
                             }
                             sh "docker system prune -af"
