@@ -19,7 +19,7 @@ pipeline{
                 steps{
                     script{
                         if (env.rollback == 'false'){
-                            sh "f"
+                            sh "echo f"
                         }
                     }
                 }
