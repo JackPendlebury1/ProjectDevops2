@@ -12,19 +12,19 @@ pipeline{
                     sh '''
                     cd service-1-frontend
                     pip3 install -r requirements.txt
-                    pytest --cov=app --cov-report=term-missing
+                    python3 -m pytest --cov=app --cov-report=term-missing
                     cd ..
                     cd service-2-char-gen
                     pip3 install -r requirements.txt
-                    pytest --cov=app --cov-report=term-missing
+                    python3 -m pytest --cov=app --cov-report=term-missing
                     cd ..
                     cd service-3-num-gen
                     pip3 install -r requirements.txt
-                    pytest --cov=app --cov-report=term-missing
+                    python3 -m pytest --cov=app --cov-report=term-missing
                     cd ..
                     cd service-4-num-gen
                     pip3 install -r requirements.txt
-                    pytest --cov=app --cov-report=term-missing
+                    python3 -m pytest --cov=app --cov-report=term-missing
                     cd ..
                     '''
                 }
