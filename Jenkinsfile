@@ -10,7 +10,6 @@ pipeline{
             stage('testing'){
                 steps{
                     sh '''
-                    sudo pip3 install virtualenv
                     cd service-1-frontend
                     virtualenv venv
                     source venv/bin/activate
