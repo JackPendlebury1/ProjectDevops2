@@ -10,6 +10,7 @@ pipeline{
             stage('testing'){
                 steps{
                     sh '''
+                    ls -la
                     cd service-1-frontend
                     pip3 install -r requrirements.txt
                     pytest --cov=app --cov-report=term-missing
