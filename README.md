@@ -22,6 +22,12 @@ this project should include:
 - Cloud Fundamentals
 - Databases
 
+## Architecture
+
+this project has a lot of moving parts, sometimes hard to keep track of which is why i thought it would be a good idea to draw a diagram of how the architecture of the final product should look like, within swarm manager and worker there will be 4 different services and 2 replicates of each.
+
+![Architecture](https://i.gyazo.com/8dc00ccb9ffcd3737e0056b0b46868f8.png)
+
 ## Approach to the project
 
 - service1
@@ -54,7 +60,11 @@ to the relevent position in the development stage
 
 for the CI server i used, Jenkins, this is what the pipline that i have setup looks like
 
-![CI]()
+![CI](https://i.gyazo.com/612c30a021bf2fc5fb8061623b84d31a.png)
+
+the follow of the pipeline, is as follows, I write the python, add and commit to my local git repo, then push to my remote repo on github, i then add a webhook so when new code is pushed, jenkins will automatically start the pipeline, this then means it tests, build, tags and pushes the images to dockerhub, it then uses ansible to setup the worker and manager vms on google cloud platform which the swarm will be deployed on.
+
+![Pipeline](https://i.gyazo.com/52032f5f4730e75be92202d17a032ed2.png)
 
 ## Testing
 
@@ -62,7 +72,7 @@ For testing I used pytest to provide me test coverage of the flask application w
 getting as close to 100% is ideal, showing all functions have been tested before being deployed.
 automated testing whenever pushed from github is useful and allows the version to fail if the testing also fails which would stop the next job, deploying the website to also stop.
 
-![Pytest](https://gyazo.com/542bdfb6fd6abe7c74e4dd18e4bc3178)
+![Pytest](https://i.gyazo.com/542bdfb6fd6abe7c74e4dd18e4bc3178.png)
 
 ## Risk Assessment
 
@@ -89,7 +99,7 @@ $ export rootpass=
 ```
 
 ```sh
-$ export SECRET_KEY
+$ export SECRET_KEY=
 ```
 
 ```sh
