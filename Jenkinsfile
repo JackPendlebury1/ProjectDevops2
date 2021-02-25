@@ -41,9 +41,7 @@ pipeline{
             stage("configuration management ansible"){
                 steps{
                     script{
-                        sh "cd ansible"
-                        sh "ansible-playbook -i inventory.yaml playbook.yaml"
-                        sh "cd .."
+                        sh "cd ansible && ansible-playbook -i inventory.yaml playbook.yaml"
                     }
                 }
             }
