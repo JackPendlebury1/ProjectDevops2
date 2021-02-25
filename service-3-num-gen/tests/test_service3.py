@@ -8,7 +8,7 @@ class TestBase(TestCase):
     def create_app(self):
         return app
 
-class TestService3(TestCase):
+class TestService3(TestBase):
     def test_get_char_gen(self):
         response = self.client.get(url_for('numgen'))
         self.assertEqual(response.status_code, 200)
