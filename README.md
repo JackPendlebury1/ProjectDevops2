@@ -68,7 +68,7 @@ For testing I used pytest to provide me test coverage of the flask application w
 getting as close to 100% is ideal, showing all functions have been tested before being deployed.
 automated testing whenever pushed from github is useful and allows the version to fail if the testing also fails which would stop the next job, deploying the website to also stop.
 
-![Pytest]()
+![Pytest](https://gyazo.com/542bdfb6fd6abe7c74e4dd18e4bc3178)
 
 ## Risk Assessment
 
