@@ -1,0 +1,12 @@
+- hosts: all
+  become: true
+  roles:
+    - docker
+- hosts: swarm-manager
+  become: true
+  roles:
+    - swarm-init
+- hosts: swarm-worker
+  become: true
+  roles:
+    - swarm-join
