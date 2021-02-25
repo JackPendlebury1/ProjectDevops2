@@ -30,9 +30,10 @@ pipeline{
                     script{
                         if (env.rollback == 'false'){
                             docker.withRegistry('', 'docker-hub-credentials'){
-                                sh "docker-compose push --ignore-push-failures"
+                                sh "docker-compose push"
+                                sh "docker system prune -af"
                             }
-                            sh "docker system prune -af"
+                            
                         }
                     }
                 }
