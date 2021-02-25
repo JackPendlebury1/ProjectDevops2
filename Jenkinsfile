@@ -22,7 +22,7 @@ pipeline{
                     pip3 install -r requirements.txt
                     python3 -m pytest --cov=app --cov-report=term-missing
                     cd ..
-                    cd service-4-num-gen
+                    cd service-4-prize-gen
                     pip3 install -r requirements.txt
                     python3 -m pytest --cov=app --cov-report=term-missing
                     cd ..
