@@ -12,15 +12,14 @@ covered during training.
 
 this project should include:
 
-- Project Management
-- Python
-- Python Testing
-- Git
-- Linux
-- Python Web Development
-- Continuous Integration
-- Cloud Fundamentals
-- Databases
+- Kanban Board: Asana or an equivalent Kanban Board
+- Version Control: Git
+- CI Server: Jenkins
+- Configuration Management: Ansible
+- Cloud server: GCP virtual machines
+- Containerisation: Docker
+- Orchestration Tool: Docker Swarm
+- Reverse Proxy: NGINX
 
 ## Architecture
 
