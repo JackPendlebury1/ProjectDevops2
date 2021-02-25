@@ -58,8 +58,7 @@ for the CI server i used, Jenkins, this is what the pipline that i have setup lo
 
 ## Testing
 
-For testing I used pytest to provide me test coverage of the flask application when conducting unit testing, 
-for intergration testing i will be using selenium.
+For testing I used pytest to provide me test coverage of the flask application when conducting unit testing,
 getting as close to 100% is ideal, showing all functions have been tested before being deployed.
 automated testing whenever pushed from github is useful and allows the version to fail if the testing also fails which would stop the next job, deploying the website to also stop.
 
@@ -80,3 +79,19 @@ automated testing whenever pushed from github is useful and allows the version t
 **Jack Pendlebury**
 
 ## how to install
+
+```sh
+$ git clone https://github.com/JackPendlebury1/ProjectDevOps2.git
+```
+
+```sh
+$ export rootpass=
+```
+
+```sh
+$ export SECRET_KEY
+```
+
+```sh
+$ docker-compose pull && docker-compose up -d
+```
