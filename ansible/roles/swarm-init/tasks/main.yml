@@ -1,7 +1,7 @@
 ---
 # tasks file for swarm-init
 - name: Init a new swarm with default parameters
-  community.docker.docker_swarm:
+  docker_swarm:
     state: present
 
 - name: get info
