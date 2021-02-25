@@ -10,8 +10,35 @@ pipeline{
             stage('testing'){
                 steps{
                     sh '''
-                    #!/bin/bash
-                    echo testing
+                    sudo pip3 install virtualenv
+                    cd service-1-frontend
+                    virtualenv venv
+                    source venv/bin/activate
+                    pip3 install -r requrirements.txt
+                    pytest --cov=app --cov-report=term-missing
+                    deactivate
+                    cd ..
+                    cd service-2-char-gen
+                    virtualenv venv
+                    source venv/bin/activate
+                    pip3 install -r requrirements.txt
+                    pytest --cov=app --cov-report=term-missing
+                    deactivate
+                    cd ..
+                    cd service-3-num-gen
+                    virtualenv venv
+                    source venv/bin/activate
+                    pip3 install -r requrirements.txt
+                    pytest --cov=app --cov-report=term-missing
+                    deactivate
+                    cd ..
+                    cd service-4-num-gen
+                    virtualenv venv
+                    source venv/bin/activate
+                    pip3 install -r requrirements.txt
+                    pytest --cov=app --cov-report=term-missing
+                    deactivate
+                    cd ..
                     '''
                 }
             }
