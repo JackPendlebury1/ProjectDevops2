@@ -9,6 +9,6 @@ class TestBase(TestCase):
         return app
 
 class TestService3(TestBase):
-    def test_get_char_gen(self):
+    def test_get_num_gen(self):
         response = self.client.get(url_for('numgen'))
         self.assertEqual(response.status_code, 200)
