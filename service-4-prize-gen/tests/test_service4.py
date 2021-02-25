@@ -9,8 +9,6 @@ class TestBase(TestCase):
         return app
 
 class TestService4(TestCase):
-    def get_char_gen(self):
-        with patch('requests.post') as g:
-            g.return_value.text = "AAA9992123"
-            response = self.client.get(url_for('prize'))
-            self.assertIn(b'Boat', response.data)
+    def test_get_char_gen(self):
+        response = self.client.get(url_for('prize'))
+        self.assertEqual(response.status_code, 200)
