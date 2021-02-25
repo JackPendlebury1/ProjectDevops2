@@ -5,5 +5,5 @@
     state: present
 
 - name: get info
-  community.docker.docker_swarm_info:
+  docker_swarm_info:
   register: swarm_info
