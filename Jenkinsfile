@@ -61,9 +61,13 @@ pipeline{
             }
             stage('Deploy App'){
                 steps{
-                    sh "export rootpass=$rootpass"
-                    sh "export SECRET_KEY=$SECRET_KEY"
-                    sh "docker-compose pull && docker-compose up -d"
+                    sh '''
+                    ssh -i ~/.ssh/id_rsa wistyhodgson@10.132.0.9
+                    git clone https://github.com/JackPendlebury1/ProjectDevops2.git && cd ProjectDevops2
+                    export rootpass=$rootpass"
+                    export SECRET_KEY=$SECRET_KEY"
+                    docker-compose pull && docker-compose up -d
+                    '''
                 }
             }
         }
