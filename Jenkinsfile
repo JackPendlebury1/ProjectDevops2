@@ -66,7 +66,7 @@ pipeline{
                     git clone https://github.com/JackPendlebury1/ProjectDevops2.git && cd ProjectDevops2
                     export rootpass=$rootpass
                     export SECRET_KEY=$SECRET_KEY
-                    docker stack deploy --compose-file docker-compose.yml project2
+                    docker stack deploy --compose-file docker-compose.yaml project2
                     '''
                 }
             }
