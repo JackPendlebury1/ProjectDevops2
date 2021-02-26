@@ -69,7 +69,6 @@ pipeline{
                     export SECRET_KEY=$SECRET_KEY
                     export app_version=${app_version}
                     docker stack deploy --compose-file docker-compose.yaml project2
-                    EOF
                     '''
                 }
             }
