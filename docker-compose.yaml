@@ -19,6 +19,16 @@ services:
   service4:
     image: neinomas/prize-gen-service4:${app_version}
     build: ./service-4-prize-gen
+  nginx:
+    image: nginx:latest
+    ports:
+    - target: 80
+      published: 80
+      protocol: tcp
+    volumes:
+    - type: bind
+      source: ./nginx/nginx.conf
+      target: /etc/nginx/nginx.conf
   db:
     image: neinomas/db
     build: ./db
