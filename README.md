@@ -44,11 +44,6 @@ this project has a lot of moving parts, sometimes hard to keep track of which is
   - based on the string generated will random choose a small prize or large prize
 
 
-## Architecture
-this project has a lot of moving parts, sometimes hard to keep track of which is why i thought it would be a good idea to draw a diagram of how the architecture of the final product should look like
-
-![Architecture]()
-
 ## method
 
 **The method i chose for this project was itterative, I first started with with the python app, then i dockerised the app. I then procceded to test if all the services were interacting thats why you will see on github, my compose file did include nginx but in the final version it does not. I then created a pipeline that pushes docker images to docker hub before pulling them and deploying on the swarm manager**
