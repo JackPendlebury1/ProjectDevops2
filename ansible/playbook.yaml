@@ -10,7 +10,3 @@
   become: true
   roles:
     - swarm-join
-- hosts: nginx
-  become: true
-  roles:
-    - nginx
