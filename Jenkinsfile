@@ -81,7 +81,7 @@ pipeline{
                         echo $(pwd)
                         ls -la
                         git clone https://github.com/JackPendlebury1/ProjectDevops2.git
-                        docker run -d -p 80:80 --name nginx --mount type=bind,source=$(pwd)/ProjectDevops2/nginx/nginx.conf,target=/etc/nginx/nginx.conf nginx
+                        docker run -d -p 80:80 --name nginx --mount type=bind,source=/home/wistyhodgson/ProjectDevops2/nginx/nginx.conf,target=/etc/nginx/nginx.conf nginx
                     '''
                 }
             }
