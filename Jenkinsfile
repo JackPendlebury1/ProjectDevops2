@@ -64,8 +64,8 @@ pipeline{
                     sh '''
                     ssh -i ~/.ssh/id_rsa wistyhodgson@10.132.0.9
                     git clone https://github.com/JackPendlebury1/ProjectDevops2.git && cd ProjectDevops2
-                    export rootpass=$rootpass"
-                    export SECRET_KEY=$SECRET_KEY"
+                    export rootpass=$rootpass
+                    export SECRET_KEY=$SECRET_KEY
                     docker stack deploy --compose-file docker-compose.yml project2
                     '''
                 }
