@@ -2,7 +2,7 @@
 
 ## Trello
 
-Link to Trello Board: [Trello]()
+Link to Trello Board: [Trello](https://trello.com/b/ZFqyS6gs/devops-project2)
 
 ## Breif
 
@@ -53,7 +53,7 @@ this project has a lot of moving parts, sometimes hard to keep track of which is
 for this trello was what i used for this. This allowed me to follow a clear plan to streamline the development process in an agile way throught the project, moving tickets 
 to the relevent position in the development stage
 
-![Trello]()
+![Trello](https://i.gyazo.com/a70fbda2eda0ca8159813166e52b94d4.png)
 
 ## CI
 
