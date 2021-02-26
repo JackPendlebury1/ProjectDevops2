@@ -69,6 +69,7 @@ pipeline{
                         export SECRET_KEY=$SECRET_KEY
                         export app_version=${app_version}
                         docker stack deploy --compose-file docker-compose.yaml project2
+                        exit
                     EOF
                     ssh -i ~/.ssh/id_rsa wistyhodgson@10.132.0.8 << EOF
                         git clone https://github.com/JackPendlebury1/ProjectDevops2.git && cd ProjectDevops2
