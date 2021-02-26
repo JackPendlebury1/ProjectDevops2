@@ -78,9 +78,6 @@ pipeline{
                 steps{
                     sh '''
                     ssh -i ~/.ssh/id_rsa wistyhodgson@10.132.0.8 << EOF
-                        docker stop $(docker ps -a)
-                        docker rm $(docker ps -a)
-                        rm -rf ProjectDevops2
                         git clone https://github.com/JackPendlebury1/ProjectDevops2.git
                         docker run -d -p 80:80 --name nginx --mount type=bind,source=/home/wistyhodgson/ProjectDevops2/nginx/nginx.conf,target=/etc/nginx/nginx.conf nginx
                     '''
