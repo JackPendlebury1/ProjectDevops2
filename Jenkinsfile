@@ -78,8 +78,8 @@ pipeline{
                 steps{
                     sh '''
                     ssh -i ~/.ssh/id_rsa wistyhodgson@10.132.0.8 << EOF
-                        git clone https://github.com/JackPendlebury1/ProjectDevops2.git && cd ProjectDevops2
-                        docker run -d -p 80:80 --name nginx --mount type=bind,source=$(pwd)/nginx/nginx.conf,target=/etc/nginx/nginx.conf nginx
+                        git clone https://github.com/JackPendlebury1/ProjectDevops2.git
+                        docker run -d -p 80:80 --name nginx --mount type=bind,source=$(pwd)/ProjectDevops2/nginx/nginx.conf,target=/etc/nginx/nginx.conf nginx
                     '''
                 }
             }
