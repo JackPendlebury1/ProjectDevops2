@@ -75,7 +75,7 @@ automated testing whenever pushed from github is useful and allows the version t
 
 ## Risk Assessment
 
-![Risk Assessment]()
+![Risk Assessment](https://i.gyazo.com/3102f47bad07af863d5051da47920296.png)
 
 ## Future Improvements
 
