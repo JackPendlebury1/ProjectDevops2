@@ -15,6 +15,8 @@ services:
   service2:
     image: neinomas/prize-gen-service2:${app_version}
     build: ./service-2-char-gen
+    deploy:
+      replicas: 2
   service3:
     image: neinomas/prize-gen-service3:${app_version}
     build: ./service-3-num-gen
