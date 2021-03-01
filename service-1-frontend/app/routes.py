@@ -15,6 +15,6 @@ def home():
         account_prize = Prizes(account_number = account_number, prize = prize.text)
         db.session.add(account_prize)
         db.session.commit()
-        prizes = Prizes.query.limit(10).all()
-        return render_template('index.html', form=form, message = prize.text, prizes = prizes)
+        prizes = Prizes.query.order_by(Prizes.id.desc()).limit(4)
+        return render_template('index.html', form=form, message = "your account number is: " + account_number + " and your prize is a " + prize.text, prizes = prizes)
     return render_template('index.html', form=form, message = "")

@@ -1,7 +1,7 @@
 pipeline{
         agent any
         environment {
-            app_version = 'v2'
+            app_version = 'v3'
             rollback = 'false'
             rootpass = credentials("rootpass")
             SECRET_KEY = credentials("SECRET_KEY")
